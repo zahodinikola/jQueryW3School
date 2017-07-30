@@ -1,0 +1,64 @@
+{
+  "records": [
+    {
+      "Syntax": "$('*')",
+      "Description": "Selects all elements",
+      "Example": ""
+    },
+    {
+      "Syntax": "$(this)",
+      "Description": "Selects the current HTML element",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('p.intro')",
+      "Description": "Selects all <p> elements with class='intro'",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('p:first')",
+      "Description": "Selects the first <p> element",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('ul li:first')",
+      "Description": "Selects the first <li> element of the first <ul>",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('ul li:first-child')",
+      "Description": "Selects the first <li> element of every <ul>",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('[href]')",
+      "Description": "Selects all elements with an href attribute",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('a[target='_blank']')",
+      "Description": "Selects all <a> elements with a target attribute value equal to '_blank'",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('a[target!='_blank']')",
+      "Description": "Selects all <a> elements with a target attribute value NOT equal to '_blank'",
+      "Example": ""
+    },
+    {
+      "Syntax": "$(':button')",
+      "Description": "Selects all <button> elements and <input> elements of type='button'",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('tr:even')",
+      "Description": "Selects all even <tr> elements",
+      "Example": ""
+    },
+    {
+      "Syntax": "$('tr:odd')",
+      "Description": "Selects all odd <tr> elements",
+      "Example": ""
+    }
+  ]
+}

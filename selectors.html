@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>jQuery Selectors</h2>
+            <p>
+                jQuery selectors allow you to select and manipulate HTML element(s).
+                jQuery selectors are used to "find" (or select) HTML elements based
+                on their name, id, classes, types, attributes, values of attributes
+                and much more. It's based on the existing CSS Selectors, and in addition,
+                it has some own custom selectors.
+            </p>
+            <p>
+                All selectors in jQuery start with the dollar sign and parentheses: $().
+            </p>
+        <h3>The element Selector</h3>
+            <p>
+                The jQuery element selector selects elements based on the element name.
+                You can select all &lt;p&gt; elements on a page like this:
+            </p>
+            <pre>
+                <code>$("p")</code>
+            </pre>
+        <h3>The #id Selector</h3>
+            <br>
+            <p>
+                The jQuery #id selector uses the id attribute of an HTML tag to find the
+                specific element. An id should be unique within a page, so you should use
+                the #id selector when you want to find a single, unique element. To find
+                an element with a specific id, write a hash character, followed by the id
+                of the HTML element:
+            </p>
+            <pre>
+                $("#test")
+            </pre>
+            <br>
+        <h3>The .class Selector</h3>
+            <br>
+            <p>
+                The jQuery class selector finds elements with a specific class. To find
+                elements with a specific class, write a period character, followed by the
+                name of the class:
+            </p>
+            <pre>
+                $(".test")
+            </pre>
+            <br>
+        <h3>More Examples of jQuery Selectors</h3>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Syntax</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="entry in tableData">
+                        <td>{{entry.Syntax}}</td>
+                        <td>{{entry.Description}}</td>
+                        <td><button type="button" class="btn btn-success">Try it!</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $http) {
+                $http.get('tableData.json')
+                .then(function(response) {
+                    $scope.tableData = response.data.records;
+                });
+            });
+        </script>
+        <br>
+        <h3>Functions In a Separate File</h3>
+        <br>
+        <p>
+            If your website contains a lot of pages, and you want your jQuery functions to be
+            easy to maintain, you can put your jQuery functions in a separate .js file.
+            When we demonstrate jQuery in this tutorial, the functions are added directly into
+            the &lt;head&gt; section. However, sometimes it is preferable to place them in a
+            separate file
+        </p>
+        <pre>
+
+            &lt;script src="my_jquery_functions.js"&gt;&lt;/script&gt;
+
+        </pre>
+    </div>
+
+</body>
+</html>

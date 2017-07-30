@@ -6,8 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jQuery getting started</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+
 </head>
 <body>
+    <p>hide me</p>
+    <p>hide me</p>
+    <p>hide me</p>
+    <h1>you can't hide me</h1>
     
 </body>
 </html>
