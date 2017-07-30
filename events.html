@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>jQuery event methods</h2>
+        <br>
+        <p>jQuery is tailor-made to respond to events in an HTML page.</p>
+        <br>
+        <h3>What are Events?</h3>
+        <br>
+        <p>
+            All the different visitor's actions that a web page can respond to are called events.
+            An event represents the precise moment when something happens.Examples:
+        </p>
+        <ul>
+            <li>moving a mouse over an element</li>
+            <li>selecting a radio button</li>
+            <li>clicking on an element</li>
+        </ul>
+        <p>
+            The term "fires/fired" is often used with events. Example: "The keypress event is fired,
+            the moment you press a key". Here are some common DOM events:
+        </p>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Mouse Events</th>
+                        <th>Keyboard Events</th>
+                        <th>Form Events</th>
+                        <th>Document/Window Events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="entry in eventsData">
+                        <td>{{entry.Mouse_Events}}</td>
+                        <td>{{entry.Keyboard_Events}}</td>
+                        <td>{{entry.Form_Events}}</td>
+                        <td>{{entry.Document_Window_Events}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $http) {
+                $http.get('eventsData.json')
+                .then(function(response) {
+                    $scope.eventsData = response.data.records;
+                });
+            });
+        </script>
+        <br>
+        <h3>jQuery Syntax For Event Methods</h3>
+        <br>
+        <p>
+            In jQuery, most DOM events have an equivalent jQuery method.
+            To assign a click event to all paragraphs on a page, you can do this:
+            <pre>
+                                $("p").click();
+            </pre>
+            The next step is to define what should happen when the event fires.
+            You must pass a function to the event:
+            <pre>
+                            $("p").click(function(){
+                                ...action goes here...
+                            });
+            </pre>
+        </p>
+        <br>
+        <h3>Commonly used jQuery event methods</h3>
+        <br>
+        
+    </div>
+</body>
+</html>

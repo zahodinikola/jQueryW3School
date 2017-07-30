@@ -1,0 +1,28 @@
+{
+  "records": [
+    {
+      "Mouse_Events": "click",
+      "Keyboard_Events": "keypress",
+      "Form_Events": "submit",
+      "Document_Window_Events": "load"
+    },
+    {
+      "Mouse_Events": "dblclick",
+      "Keyboard_Events": "keydown",
+      "Form_Events": "change",
+      "Document_Window_Events": "resize"
+    },
+    {
+     "Mouse_Events": "mouseenter",
+      "Keyboard_Events": "keyup",
+      "Form_Events": "focus",
+      "Document_Window_Events": "scroll"
+    },
+    {
+      "Mouse_Events": "mouseleave",
+      "Keyboard_Events": "",
+      "Form_Events": "blur",
+      "Document_Window_Events": "unload"
+    }
+  ]
+}
