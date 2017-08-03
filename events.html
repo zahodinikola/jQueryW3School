@@ -79,7 +79,107 @@
         <br>
         <h3>Commonly used jQuery event methods</h3>
         <br>
-        
+		<p><strong>$(document).ready(function(){})</strong></p>
+		<br>
+		<p>The $(document).ready() method allows us to execute a function when 
+			the document is fully loaded. This is the event too. </p>
+		<br>
+		<h3><strong>click()</strong></h3>
+		<br>
+		<p>
+			The click() method attaches an event handler function to an HTML element.
+			The function is executed when the user clicks on the HTML element.
+			The following example says: when a click event fires on a <code>&lt;p&gt;</code> element; hide the current <code>&lt;p&gt;</code> element:
+		</p>
+		<pre>
+			&lt;script&gt;
+				$("p").click(function(){
+					$(this).hide();
+				});
+			&lt;/script&gt;
+		</pre>
+		<br>
+		<!-- <script>
+			$(document).ready(function() {
+				$("p").click(function(){
+					$(this).hide();
+				});
+			});
+		</script> -->
+		<h3><strong>dlclick()</strong></h3>
+		<br>
+		<p>
+			The dblclick() method attaches an event handler function to an HTML element.
+			The function is executed when the user double clicks on the HTML element:
+		</p>
+		<pre>
+			&lt;script&gt;
+			$(document).ready(function() {
+				$("p").dblclick(function() {
+					$(this).hide();
+				});
+			});
+			&lt;/script&gt;
+		</pre>
+		<br>
+<!-- 		<script>
+			$(document).ready(function(){
+				$("p").dblclick(function(){
+					$(this).hide();
+				});
+			});
+		</script> -->
+		<br>
+		<h3><strong>mouseenter()</strong></h3>
+		<p>
+			The mouseenter() method attaches an event handler to an HTML element.
+			The function is executed when the mouse pointer enters the HTML element:
+		</p>
+		<br>
+		<pre>
+			&lt;script&gt;
+			$(document).ready(function() {
+				$("#p1").mouseenter(function() {
+					alert("you entered p1");	
+				});
+			});
+			&lt;/script&gt;
+		</pre>
+		<br>
+<!-- 		<script>
+			$(document).ready(function() {
+				$("#p1").mouseenter(function() {
+					alert("YOU ENTERED");
+				});
+			});
+		</script>
+		<br>
+		<h3 id="p1">mouse here</h3> -->
+		<br>
+		<h3><strong>mouseleave()</strong></h3>
+		<br>
+		<p>
+			The mouseleave() method attaches an event handler function to HTML element.
+			The function is executed when the mouse pointer leaves the HTML element:
+		</p>
+		<pre>
+			&lt;script&gt;
+			$(document).ready(function() {
+				$("#p1").mouseleave(function() {
+					alert("YOU are now leaving the wellcome state");
+				});
+			});
+			&lt;/script&gt;
+		</pre>
+		<br>
+		<h3 id="p1">leave me alone, please</h3>
+		<script>
+			$(document).ready(function() {
+				$("#p1").mouseleave(function() {
+					alert("wellcome back");
+				});
+			});
+		</script>
     </div>
 </body>
 </html>
