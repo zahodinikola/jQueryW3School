@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jQuery getting started</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
 </head>
 <body>
     <div class="container">
@@ -173,13 +176,91 @@
 		</pre>
 		<br>
 		<h3 id="p1">leave me alone, please</h3>
-		<script>
+<!-- 		<script>
 			$(document).ready(function() {
 				$("#p1").mouseleave(function() {
 					alert("wellcome back");
 				});
 			});
+		</script> -->
+		<br>
+		<h3><strong>mousedown()</strong></h3>
+		<br>
+		<p>
+			The <strong>mousedown()</strong> method attaches an event handler function to an HTML element.
+			The function is exexuted when the left, right or middle mouse button is pressed down while the mouse is
+			over an HTML element.
+		</p>
+		<h2 id="p2">Press the key here</h2>
+		<script>
+			$(document).ready(function(){
+				$("#p2").mousedown(function(){
+					alert("key is pressed");
+				});
+			});
 		</script>
+		<br>
+		<p>
+			The <strong>mouseup()</strong> function attaches an event function to an HTML element.
+			The function is executed when the left, middle or right mouse button is released, while the mouse over the HTML element.
+		</p>
+		<br>
+		<h2 id="h3">Mouse up!</h3>
+		<script>
+			$(document).ready(function(){
+				$("#h3").mouseup(function(){
+					alert("you released the button");
+				});
+			});
+		</script>
+		<br>
+		<h3>hover()</h3>
+		<br>
+		<h2 id="h4">Mouse hovers over here</h2>
+<!-- 		<script>
+			$(document).ready(function(){
+				$("#h4").hover(function(){
+					alert("you entered");
+				}, function(){
+				alert("you left");
+				});
+			});
+		</script>	 -->
+		<br>
+		<h3><strong>focus()</strong></h3>
+		<br>
+		<p>
+			The <strong>focus()</strong> function attaches an event handler to an HTML element.
+			The function is executed when the form field gets focus.
+		</p>
+		<form name="text">
+			<input type="text">
+		<form>
+		<script>
+			$(document).ready(function(){
+				$("input").focus(function(){
+					$(this).css("background-color", "#abcabc");
+				});
+			});
+		</script>
+		<br>
+		<h3><strong>blur()</strong></h3>
+		<br>
+		<p>
+			The <strong>blur()</strong> method atteches an event handler function to an HTML form field.
+			The function is executed when the form field loses focus.
+		</p>
+		<form>
+			<input type="text">
+		</form>
+		<script>
+			$(document).ready(function() {
+				$("input").blur(function() {
+					$(this).css("background-color", "#333333");
+				});
+			});
+		</script>
+		
     </div>
 </body>
 </html>
