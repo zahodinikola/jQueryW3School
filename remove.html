@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3><strong>jQuery - remove elements</strong></h3>
+		<br>
+		<p>
+			With jQuery it is easy to remove existing HTML elements
+		</p>
+		<br>
+		<h3>Remove elements/content</h3>
+		<br>
+		<p>
+			To remove elements and content there are mainly two jQuery methods:
+		</p>
+		<ul>
+			<li>remove() - removes the selected HTML elements (and its child elements);</li>
+			<li>empty() - removes the child elements from the selected element</li>
+		</ul>
+		<br>
+		<h3>jQuery remove() method</h3>
+		<br>
+		<p>
+			The jQuery remove() method removes selected elements and all its child elements
+		</p>
+		<br>
+		<h4>Example</h4>
+		<br>
+		<pre>
+			$("#div1").remove();
+		</pre>
+<!-- 		<div id="removeThis" style="width: 100px; height: 100px; background-color: green">
+			<img src="./assets/img/w3jquery.gif" alt="none">
+		</div>
+		<button id="btn_remove" class="btn btn-danger">Remove</button>
+		<script>
+			$(document).ready(function() {
+				$("#btn_remove").click(function() {
+					$("#removeThis").remove();
+				});
+			});
+		</script> -->
+		<br>
+		<h3>jQuery empty method</h3>
+		<br>
+		<p>
+			The jQuery empty() method removes the child elements from the selected elements
+		</p>
+		<br>
+		<h4>Example</h4>
+		<br>
+		<pre>
+			$("div").empty();
+		</pre>
+		<br>
+<!-- 		<div id="emptyMe" style="width: 200px; height: 200px; background-color: yellow">
+			<img src="./assets/img/w3jquery.gif" alt="none">
+		</div>
+		<button class="btn btn-primary" id="btn_empty">Empty me</button>
+		<script>
+			$(document).ready(function() {
+				$("#btn_empty").click(function() {
+					$("#emptyMe").empty();
+				});
+			});
+		</script> -->
+		<br>
+		<h3>Filter the elements to be removed</h3>
+		<br>
+		<p>
+			The jQuery remove() method also accepts one parameter, wich allows you filter the elements to be removed.
+			The parameter can be any of the jQuery syntaxes.
+			The following example removes all &gt;p&lt; elements with class="test".
+		</p>
+		<br>
+		<h4>Example</h4>
+		<br>
+		<pre>
+			$("p").remove('.test');
+		</pre>
+		<br>
+		<p>
+			Next example removes all &gt;p&lt; elements with classes "test" and "demo".
+		</p>
+		<pre>
+			$("p").remove(".test, .demo");
+		</pre>
+		<br>
+		<p class="test" style="width: 200px; height: 200px; background-color: yellow">
+			<img src="./assets/img/w3jquery.gif" alt="none">
+		</p>
+		<p class="demo" style="width: 200px; height: 200px; background-color: yellow">
+			<img src="./assets/img/w3jquery.gif" alt="none">
+		</p>
+		<button class="btn btn-primary" id="btn_remove">Remove</button>
+		<script>
+			$(document).ready(function() {
+				$("#btn_remove").click(function() {
+					$("p").remove(".test, .demo");
+				});
+			});
+			for (var i = 0; i < 15; i++){
+				var element = document.createElement('br');
+				document.body.appendChild(element);
+			}
+		</script>
+		
+	</div>
+</body>
+</html>

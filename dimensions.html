@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+	<!-- <link rel="stylesheet" href="/stylesheet.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3><strong>jQuery dimensions</strong></h3>
+        <br>
+        <p>
+            With jQuery it is easy to work with dimensions of elements and browser window
+        </p>
+        <br>
+        <h3>jQuery dimensions methods</h3>
+        <br>
+        <p>
+            jQuery has several important methods for working with dimensions:
+        </p>
+        <ul>
+            <li>width()</li>
+            <li>height()</li>
+            <li>innerWidth()</li>
+            <li>innerHeight()</li>
+            <li>outerWidth()</li>
+            <li>outerHeight()</li>
+        </ul>
+        <br>
+        <h3>jQuery dimensions</h3>
+        <br>
+        <div class="image-rounded">
+            <img src="./assets/img/img_jquerydim.gif" alt="none">
+        </div>
+        <br>
+        <h3>jQuery width() and height() methods</h3>
+        <br>
+        <p>
+            The width() method sets or returns the width of an element (excludes padding, margin, border).
+            The height() method sets or returns the width of an element (escludes padding, margin, border).
+            The following example returns the width and height of specified &lt;div&gt; element:
+        </p>
+        <div id="div1">Here will be output dimensions</div>
+        <script>
+            $(document).ready(function() {
+                var txt = "";
+                txt += "Width: " + $("#div1").width() + "<br>";
+                txt += "Height: " + $("#div1").height() + "!";
+                $("#div1").html(txt);
+            });
+        </script>
+        <br>
+        <h3>jQuery innerWidth() and innerHeight() methods</h3>
+        <br>
+        <p>
+            The innerWidth() method returns the width of an element (includes padding)
+            The innerHeight() method returns the height of an element (includes padding)
+            The following example returns the inner width/height of a specified &lt;div&gt;
+            element:
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            $('button').click(function() {
+                var txt = "";
+                txt += "Inner width is: " + $('#div1').innerWidth() + "&lt;br&gt;";
+                txt += "Inner height is: " + $('#div1').innerHeight() + "&lt;br&gt;";
+                $("#div1").html(txt);
+            })
+        </pre>
+        <button id="btn3" class="btn btn-default">Inner Width/height</button>
+        <script>
+            $(document).ready(function() {
+                $('#btn3').click(function() {
+                    var txt = "";
+                    txt += "Inner width is: " + $('#div1').innerWidth() + '<br>';
+                    txt += "Inner height is: " + $("#div1").innerHeight();
+                    $("#div1").html(txt);
+                });
+            });
+        </script>
+        <br>
+        <h3>jQuery outerWidth() and outerHeight() methods</h3>
+        <br>
+        <p>
+            The outerWidth() method returns the width of an element (including padding and border).
+            The outerHeight() method returns the height of an element (includin padding and border).
+            The following example returns the width/height of a spcified &lt;div&gt; element
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            $('#btn1').click(function() {
+                var txt = "";
+                txt += "Outer width is: " + $("#div1").outerWidth() + "&lt;br&gt;";
+                txt += "Outer height is: " + $("#div1").outerHeight();
+                $("#div1").html(txt);
+            })
+        </pre>
+        <button id="btn4" class="btn btn-success">Outer dimensions</button>
+        <script>
+            $("#btn4").click(function() {
+                var txt = "";
+                txt += "Outer width is : " + $("#div1").outerWidth() + "<br>";
+                txt += "Outer height is : " + $("#div1").outerHeight();
+                $("#div1").html(txt);
+            });
+        </script>
+        <br>
+        <p>
+            The outerWidth(true) method returns the width of an element (includs padding, border and margin).
+            The outerHeight(true) method returns  the width of an element (includs padding, border and margin).
+        </p>
+        <button class="btn btn-default" id="btn5">True</button>
+        <script>
+            $("#btn5").click(function() {
+                var txt = "";
+                txt += "OuterWidth(true) is: " + $("#div1").outerWidth(true) + "<br>";
+                txt += "OuterHeight(true) is: " + $("#div1").outerHeight(true);
+                $("#div1").html(txt);
+            });
+        </script>
+        <br>
+        <h3>jQuery more width and height</h3>
+        <br>
+        <p>
+            The following example returns the width and height of the document (the HTML document)
+            and window (the browser viewport):
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            $("button").click(function() {
+                var txt = "";
+                txt += "dimensions of the document are: " + $(document).width() + "x" +
+                        $(document).height() + "\n";
+                txt += "dimensions of the window are: " +$(window).width() + "x" +
+                        $(window).height() + '.';
+                $("#div1").html(txt);
+            });
+        </pre>
+        <button class="btn btn-success" id="btn6">Doc dims</button>
+        <script>
+            $("#btn6").click(function() {
+                var txt = "";
+                txt += "dimensions of the document are: " + $(document).width() + "x" +
+                        $(document).height() + "\n";
+                txt += "dimensions of the window are: " +$(window).width() + "x" +
+                        $(window).height() + '.';
+                $("#div1").html(txt);
+            });
+        </script>
+        <br>
+        <p>
+            The following example sets the width and height of a specified HTML element: 
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            $("button").click(function() {
+                $("#div1").width(500).height(500);
+            });
+        </pre>
+        <button id="set" class="btn btn-danger">set 500</button>
+        <div id="div2" style="width: 100px; height: 100px; background-color: yellow">
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#set").click(function() {
+                    $("#div2").width(500).height(500);
+                });
+            });
+        </script>
+	</div>
+</body>
+</html>

@@ -14,8 +14,267 @@
 </head>
 <body>
     <div class="container">
-
-	
+		<h1>jQuery <strong>hide()</strong> and <strong>show()</strong></h1>
+		<p>
+			With jQuery you can hide and show elements with the hide() and show() methods
+		</p>
+		<h3>Example</h3>
+		<pre>
+			$("#hide").click(function(){
+				$("p").hide();
+			});
+			$("#show").click(function(){
+				$("p").show();
+			});
+		</pre>
+		<h4>Syntax</h4>
+		<pre>
+			$(selector).hide(speed, callback);
+			$(selector).show(speed, callback);
+		</pre>
+		<p>
+			The optional parameter <code>speed</code> specifies the speed of hide/show and can take values
+			"slow", "fast" and milliseconds.
+			The optional callback parameter is a function to be executed after the hide() or show method
+			completes (more about callback functions later).
+		</p>
+		<h3>Example</h3>
+		<pre>
+			$("button").click(function() {
+				$("p").hide(1000);
+			});
+		</pre>
+<!-- 		<script>
+			$(document).ready(function() {
+				$("pre").click(function() {
+					$("p").hide(1000);
+				});
+			});
+		</script> -->
+		<br>
+		<h3>jQuery <strong>toggle()</strong></h3>
+		<br>
+		<p>
+			With jQuery you can toggle between hide() and show() methods with the <strong>toggle()</strong> method.
+			Shown elements are hidden and hidden are shown:
+		</p>
+		<br>
+		<pre>
+			$(document).ready(function() {
+				$("pre").click(function() {
+					$("p").hide(1000);
+				});
+			});
+		</pre>
+		<br>
+		<button type="button">hide paragraph</button>
+		<p id="paragraphToHide">hide this hide this hide this hide this hide this hide this hide this </p>
+<!-- 		<script>
+			
+			$(document).ready(function() {
+				$("button").click(function() {
+					$("#paragraphToHide").hide(1000);
+				});
+				$("pre").click(function() {
+					$("p").toggle(1000, alert('done'));
+				});
+			});
+		</script> -->
+		<br>
+		<h4>Syntax</h4>
+		<br>
+		<pre>
+			<code>$(selector).toggle(speed, callback);</code>
+		</pre>
+		<p>
+			The optional parameter speed can take values "fast", "slow" or milliseconds.
+			The optional callback parameter is a callback function to be executed after toggle() completes
+		</p>
+		<h2>jQuery effects - fading</h2>
+		<br>
+		<p>With jQuery you can fade elements in and out of visibility</p>
+		<h3>jQuery fading methods:</h3>
+		<pre>
+			jQuery has the following methods:
+				fadeIn();
+				fadeOut();
+				fadeToggle();
+				fadeTo();
+		</pre>
+		<h3>jQuery fadeIn() Method</h3>
+		<p>The jQuery fadeIn() method is used to fade in a hidden element</p>
+		<h4>Syntax</h4>
+		<pre>
+			$(selector).fadeIn(speed, callback);
+		</pre>
+		<p>The optional speed parameter specifies the duration of the effect</p>
+		<p>It can take the fallowing values: "slow", "fast" or milliseconds.</p>
+		<p>The optional callback parameter is a function to be executed after the fading completes</p>
+		<p>The following example demonstrates the fadeIn() method with different parameters</p>
+		<h3>Example</h3>
+		<pre>
+			$("button").click(function() {
+				$("#div1").fadeIn();
+				$("#div2").fadeIn(1000);
+				$("#div3").fadeIn('fast');
+				$("#div4").fadeIn('slow');
+				$("#div5").fadeIn('2000', alert('123')); pay attention to calling alert - it's breaking fading
+			});
+		</pre>
+		<!-- <div id="div1" style="width:80px; height:80px; display:none; background-color: red"></div> -->
+		<!-- <div id="div2" style="width:80px; height:80px; display:none; background-color: blue"></div> -->
+		<!-- <div id="div3" style="width:80px; height:80px; display:none; background-color: green"></div> -->
+		<!-- <div id="div4" style="width:80px; height:80px; display:none; background-color: yellow"></div> -->
+		<!-- <div id="div5" style="width:80px; height:80px; display:none; background-color: black"></div> -->
+		<!-- <script> -->
+			<!-- $(document).ready(function() { -->
+				<!-- $("button").click(function() { -->
+					<!-- $("#div1").fadeIn(); -->
+					<!-- $("#div2").fadeIn("fast"); -->
+ 					<!-- $("#div3").fadeIn("slow"); -->
+					<!-- $("#div4").fadeIn(1000); -->
+ 					<!-- $("#div5").fadeIn(3000); -->
+				<!-- }); -->
+			<!-- }); -->
+		<!-- </script> -->
+		<!-- <script> -->
+				
+		<!-- for( var i=0; i < 20; i++){ -->
+		<!-- var element = document.createElement('br');	 -->
+		<!-- document.body.appendChild(element); -->
+		
+		<!-- } -->
+		<!-- </script> -->
+		<!-- <button type="button">click to fade in elements</button> -->
+		<h3>jQuery <strong>fadeOut()</strong> method</h3>
+		<p>The jQuery fadeOut() method is used to fade out a visible element</p>
+		<h4>Syntax</h4>
+		<pre>
+			$(selector).fadeOut(speed, callback);
+		</pre>
+		<p>
+			The optional speed parameter specifies the duration of the effect.
+			It can take the fallowing values: 'fast', 'slow' or milliseconds.
+			The optional parameter <code>callback</code> specifies the function to be executed after the fading completes.
+			The fallowing example demonstrates the fadeOut() method with different parameters.
+		</p>
+		<h3>Example</h3>
+		<pre>
+			$(document).ready(function() {
+				$("button").click(function() {
+					$("#div1").fadeOut();
+					$("#div2").fadeOut(1000);
+					$("#div3").fadeOut('fast');
+					$("#div4").fadeOut('slow');
+					$("#div5").fadeOut(3000, func(params));
+				});
+			});
+		</pre>
+		<!-- <div id="div1" style="width: 80px; height: 80px; background-color: blue">
+		<button class="btn" type="button">Click</button>
+		</div>
+		<script>
+			
+			
+			for (var i = 0; i < 20; i++){
+				var element = document.createElement('br');
+				document.body.appendChild(element);
+			}
+			$(document).ready(function() {
+				$("button").click(function() {
+					$("#div1").fadeOut('slow');
+				});
+			});
+        </script> -->
+        <h3>jQuery <strong>fadeToggle()</strong> method</h3>
+        <p>
+            The jQuery fadeToglle() method toggles between the fadeIn() and fadeOut() methods.
+            If the elements are faded out, fadeToggle() will fade them in.
+            If the elements are faded in, fadeToggle() will fade them out.
+        </p>
+        <h4>Syntax</h4>
+        <pre>
+            $(document).ready(function(){
+                $(selector).event(function(){
+                    $(selector).fadeToggle(speed, callback);
+                });
+            });
+        </pre>
+        <p>
+            The optional speed parameter specifies the duration of the effect. It can take the
+            fallowing values: 'fast', 'slow' or milliseconds.
+            The optional callback parameter is a function to be executed after the fading completes.
+            The following example demonstrates the fadeToggle() method with different parameters:
+        </p>
+        <h3>Example</h3>
+        <pre>
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("#div1").fadeToggle();
+                    $("#div2").fadeToggle(3000);
+                    $("#div3").fadeToggle('slow');
+                });
+            });
+        </pre>
+        <!-- <button type="button">click me</button>
+        <div id="div1" style="width: 80px; height: 80px; display: none; background-color: red"></div>
+        <div id="div2" style="width: 80px; height: 80px; background-color: green"></div>
+        <script>
+            for (var i = 0; i < 20; i++){
+                var element = document.createElement('br');
+                document.body.appendChild(element);
+            }
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("#div1").fadeToggle('slow');
+                    $("#div2").fadeToggle('slow');
+                });
+            });
+        </script> -->
+        <h3>jQuery <strong>fadeTo()</strong> method</h3>
+        <p>
+            The jQuery fadeTo() method allows fading to a given opacity (value between 0 and 1).
+        </p>
+        <h4>Syntax</h4>
+        <pre>
+            $(selector).fadeTo(speed, opacity, callback);
+        </pre>
+        <p>
+            The required speed parameter specifies the duration of the effect. It can take the
+            following values: 'fast', 'slow' and milliseconds.
+            The required opacity parameter in the fadeTo() method specifies fading to a given
+            opacity (value between 0 and 1).
+            The optional callback parameter is a function to be executed after the function completes.
+        </p>
+		<h4>Example</h4>
+		<pre>
+			$(document).ready(function() {
+				$("button").click(function() {
+					$("#div").fadeTo();
+				});
+			});
+		</pre>
+<!-- 		<div id="div1" style="width: 80px; height: 80px; display: none; background-color: green"></div>
+		<button type="button" id="button1" class="btn btn-default">Fade in</button>
+		<button type="button" id="button2" class="btn btn-default">Fade out</button>
+		<button type="button" id="button3" class="btn btn-default">Fade to</button>
+		<script>
+			for (var i = 0; i < 10; i++){
+				var element = document.createElement('br');
+				document.body.appendChild(element);
+			}
+			$(document).ready(function() {
+				$("#button1").click(function() {
+					$("#div1").fadeIn(2000);
+				});
+				$("#button2").click(function() {
+					$("#div1").fadeOut(2000);
+				});
+				$("#button3").click(function() {
+					$("#div1").fadeTo(2000, 0.5);
+				});
+			});
+		</script> -->
     </div>
 </body>
 </html>

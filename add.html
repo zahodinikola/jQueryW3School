@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3><strong>jQuery - add elements</strong></h3>
+        <br>
+        <p>
+            With jQuery it is easy to add new elements/content
+        </p>
+        <br>
+        <h3>Add new HTML content</h3>
+        <br>
+        <p>
+            We will look at four jQuery methods that are used to add new content
+        </p>
+        <ul>
+            <li>append() - inserts content at the end of the selected elements</li>
+            <li>prepend() - inserts content at the beginning of the selected elements</li>
+            <li>after() - inserts content after the selected elements</li>
+            <li>before() - inserts content before the selected elements</li>
+        </ul>
+        <br>
+        <h3>jQuery append() method</h3>
+        <br>
+        <p>
+            The jQuery append() method inserts content at the end of the selected elements
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            $("p").append("some appended text");
+        </pre>
+        <br>
+        <!-- <p id="appendHere">After there will add some text</p>
+        <button id="appendBtn" class="btn btn-warning">Append</button>
+        <script>
+            $(document).ready(function() {
+                $("#appendBtn").click(function() {
+                    $("#appendHere").append($("#appendBtn").text());
+                });
+            });
+        </script> -->
+        <br>
+        <h3>jQuery prepend() method</h3>
+        <br>
+        <p>
+            The jQuery prepend method inserts content at the beginnig of the selected elements
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            $("p").prepend("some prepended text");
+        </pre>
+        <br>
+        <!-- <script>
+            $(document).ready(function() {
+                $("#prependBtn").click(function() {
+                    $("#prependHere").prepend($("#prependBtn").text());
+                });
+            });
+        </script>
+        <p id="prependHere">Text will appear before this note</p>
+        <button id="prependBtn" class="btn btn-primary">Prepend</button> -->
+        <br>
+        <h3>Add several new elements with append and prepend</h3>
+        <br>
+        <p>
+            In both examples above we have only inserted some text/HTML at the beginning/end of
+            the selected HTML elements
+        </p>
+        <br>
+        <p>
+            However both the append and prepend methods can take an infinite number of new elements
+            as parameters. The new elements can be generated with text/HTML, like we have done in the
+            examples above, with jQuery, or with JavaScript code and DOM elements.
+            In the following example we create several new elements. The elements are created with 
+            text/HTML, with jQuery, or with JavaSctipt code and DOM elements. Then we append
+            the new elements to the text with the append() method (this would have worked for prepend()
+            too).
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            function appendText() {
+                var text1 = "<p>Text.</p>";              //create element with html
+                var text2 = $("<p></p>").text("Text.");  //create element with jQuery
+                var text3 = document.createElement("p"); //create element with DOM
+                text3.innerHTML = "Text.";
+                $("body").append(text1, text2, text3);
+            };
+        </pre>
+        <script>
+            (function() {
+                var text1 = "<p>Text.</p>";
+                var text2 = $("<p></p>").text("Text.");
+                var text3 = document.createElement("p");
+                text3.innerHTML = "Text.";
+                $("body").append(text1, text2, text3);
+            }());
+        </script>
+        <br>
+        <h3>jQuery after and before methods</h3>
+        <br>
+        <p>
+            The jQuery after() method inserts content AFTER the selected HTML elements
+        </p>
+        <p>
+            The jQuery before() method inserts content BEFORE the selected HTML elements
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            $("img").after("some text after");
+            $("img").before("some text before");
+        </pre>
+        <br>
+        <img src="./assets/img/w3jquery.gif" alt="none" width="200px" height="200px" />
+        <button class="btn btn-success" id="btn1">Before</button>
+        <button class="btn btn-primary" id="btn2">After</button>
+        <script>
+            $(document).ready(function() {
+                $("#btn1").click(function() {
+                    $("img").before("<b>Before</b>");
+                });
+                $("#btn2").click(function() {
+                    $("img").after("<i>After</i>");
+                });
+            });
+        </script>
+        <br>
+        <h3>Add several new elements with after and before</h3>
+        <br>
+        <p>
+            Also, both the after() and before() methods can take an infinite number of new elements
+            as parameters.
+        </p>
+        <p>
+            The new elements can be generated with text/HTML (like we have done in the example ebove),
+            with jQuery or with JavaSctipt code and DOM elements
+        </p>
+        <p>
+            In the following example we create several new elements. The elements are created with
+            text/HTML, jQuery or JavaScript/DOM.
+        </p>
+        <p>
+            Then we insert the new elements to the text with the after() method (this would have worked
+            for before() too):
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            function() {
+                var text1 = "<b>Hello, HTML!</b>";
+                var text2 = "$(<b></b>).text('Hello, jQuery!');
+                var text3 = document.createElement('b');
+                text3.innerHTML = 'Hello, JavaScript'
+            }
+        </pre>
+        <script>
+            (function() {
+                var text1 = "<b>Hello, HTML!</b>";
+                var text2 = $('<b></b>').text('Hello, jQuery!');
+                var text3 = document.createElement('b');
+                text3.innerHTML = 'Hello, JavaScript';
+                $('body').after(text1, text2, text3);
+            }());
+        </script>
+
+	</div>
+</body>
+</html>

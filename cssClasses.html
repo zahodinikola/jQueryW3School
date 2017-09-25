@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+	<!-- <link rel="stylesheet" href="/stylesheet.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+		<h3><strong>jQuery get and set css classes</strong></h3>
+		<br>
+		<p>
+			With jQuery it is easy to manipulate the CSS of elements
+		</p>
+		<br>
+		<h3>jQuery manipulating CSS</h3>
+		<br>
+		<p>
+			jQuery has several methods for css manipulation. We will look at the following methods:
+		</p>
+		<ul>
+			<li>addClass() - adds one or several classes to the selected element(s).</li>
+			<li>removeClass() - removes one or more classes from the selected element(s).</li>
+			<li>toggleClass() - toggles between adding/removing classes from the selected elements</li>
+			<li>css() - sets or returns the style attribute.</li>
+		</ul>
+		<br>
+		<h3><strong>Example stylesheet</strong></h3>
+		<br>
+		<p>
+			The following stylesheet will be used for all the examples on this page
+		</p>
+		<br>
+		<div class="jumbotron">
+			<pre>
+				.important {
+						font-weight: bold;
+						font-size: xx-large;
+					}
+				.blue {
+						color: blue;
+					}
+			</pre>
+		</div>
+		<br>
+		<style>
+			.important {
+				font-weight: bold;
+				font-size: xx-large;
+			}
+			.blue {
+				color: blue;
+			}
+		</style>
+		<h3>jQuery addClass() method</h3>
+		<br>
+		<p>
+			The following example shows how to add class attributes to different elements. Of course you can select multiple
+			elements, when adding classes.
+		</p>
+		<br>
+		<button id="btn1" class="btn btn-primary">Press me</button>
+		<h2>Make me blue</h2>
+		<div id="important"><p>Important</p></div>
+		<script>
+			$(document).ready(function() {
+				$("#btn1").click(function() {
+					$("h2").addClass('blue');
+					$("#important").addClass('important');
+				});
+			});
+		</script>
+		<br>
+		<p>
+			You can also specify multiple classes within the addClass() method.
+		</p>
+		<br>
+		<p id="paragraph">Add classes to me</p>
+		<button id="btn2" class="btn btn-success">Add classes</button>
+		<script>
+			$(document).ready(function() {
+				$("#btn2").click(function() {
+					$("#paragraph").addClass("blue important");
+				});
+			});
+		</script>
+		<br>
+		<h3>jQuery removeClass() method</h3>
+		<br>
+		<p>
+			The following example shows how to remove a specific class attribute from different
+			elements.
+		</p>
+		<br>
+		<h4>Example</h4>
+		<br>
+		<pre>
+			$("button").click(function() {
+				$("h1, h2, p").removeClass("blue");
+			});
+		</pre>
+		<button id="btn3" class="btn btn-success">Remove class</button>
+		<script>
+			$(document).ready(function() {
+				$("#btn3").click(function() {
+					$("#paragraph").removeClass('blue');
+				});
+			});
+		</script>
+		<br>
+		<h3>jQuery toggleClass() method</h3>
+		<br>
+		<p>
+			The following example will show how to use the jQuery toggleClass() method.
+			This method toggles between adding/removing classes from the selected elements.
+		</p>
+		<br>
+		<h4>Example</h4>
+		<br>
+		<pre>
+			$("button").click(function() {
+				$("p").toggleClass('blue');
+			});
+		</pre>
+		<button class="btn btn-primary" id="btn4">Toggle</button>
+		<script>
+			$(document).ready(function() {
+				$("#btn4").click(function() {
+					$("#paragraph").toggleClass('blue');
+				});
+			});
+		</script>
+	</div>
+</body>
+</html>

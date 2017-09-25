@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+	<!-- <link rel="stylesheet" href="/stylesheet.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3><strong>jQuery css() method</strong></h3>
+        <br>
+        <h3>jQuery css() method</h3>
+        <br>
+        <p>
+            The css() method sets or returns one or more style properties for the selected element
+        </p>
+        <br>
+        <h3>Return a css property</h3>
+        <br>
+        <p>
+            To return the value of the specified CSS property use the following syntax:
+        </p>
+        <pre>
+            css('propertyname');
+        </pre>
+        <br>
+        <p>
+            The following example will return the background-color value of the first matched
+            element:
+        </p>
+        <br>
+        <h4>Example</h4>
+        <br>
+        <pre>
+            $('p').css('background-color');
+        </pre>
+        <p id="first" style="background-color: #ff0000">Paragraph</p>
+        <p id="second" style="background-color: #00ff00">Paragraph</p>
+        <p id="third" style="background-color: #0000ff">Paragraph</p>
+        <button id="btn1" class="btn btn-info">Press</button>
+        <script>
+            $(document).ready(function() {
+                $("#btn1").click(function() {
+                    alert("background color is: " + $("#first").css("background-color"));
+                });
+            });
+        </script>
+        <br>
+        <h3>Set a css property</h3>
+        <br>
+        <p>
+            To set the specified css property use the following syntax:
+        </p>
+        <br>
+        <pre>
+            $('p').css('propertyname', 'value');
+        </pre>
+        <br>
+        <p>
+            The following example will set the background-color value for all matched elements:
+        </p>
+        <br>
+        <button id="total" class="btn btn-warning">Change all</button>
+        <script>
+            $(document).ready(function() {
+                $("#total").click(function() {
+                    $("p").css('background-color', 'yellow');
+                });
+            });
+        </script>
+        <br>
+        <h3>Set multiple css properties</h3>
+        <br>
+        <p>
+            To set multiple CSS properties use the following syntax:
+        </p>
+        <pre>
+            $('p').css({
+                'propertyname': 'value',
+                'propertyname': 'value'...
+            });
+        </pre>
+        <button id="setMultiple" class="btn btn-success">Set multiple properties</button>
+        <script>
+            $(document).ready(function() {
+                $("#setMultiple").click(function() {
+                    $("p").css({
+                        'font-size': '14px',
+                        'background-color': 'green',
+                        'font-weight': 'bold'
+                    });
+                });
+            });
+        </script>
+	</div>
+</body>
+</html>

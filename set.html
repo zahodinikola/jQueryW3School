@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+		<h3><strong>jQuery - set content and attributes</strong></h3>
+		<br>
+		<h3>Ser content - text(), html() and val()</h3>
+		<br>
+		<p>We will use the same three methods from the previous page to <strong>set content</strong></p>
+		<br>
+		<ul>
+			<li>text() - sets or returns the text content of selected element</li>
+			<li>html() - sets or returns content of selected element (including html)</li>
+			<li>val() - sets or returns the value of form fields</li>
+		</ul>
+		<p>
+			The following example demonstrates how to set content with text(), html() or val()
+			methods.
+		</p>
+		<br>
+		<h3>Example</h3>
+		<br>
+		<pre>
+
+						$(document).ready(function() {
+							$("#btn1").click(function() {
+								$("#test1").text("hello, buddy!");
+							});
+							$("#btn2").click(function() {
+								$("#test2").html("<b>'hello, buddy!'</b>");
+							});
+							$("#btn3").click(function() {
+								$("#test3").val('hi, there');
+							});
+						});
+
+		</pre>
+		<!-- <p id="test1"></p>
+		<p id="test2"></p>
+		<button id="btn1">set text</button>
+		<button class="btn btn-warning" id="btn2">set text via html></button>
+		<button class="btn btn-info" id="btn3">set value for input field</button>
+		<form action="">
+			<input type="text" id="test3" name="variable">
+			<input type="submit">
+		</form>
+		<script>
+			$(document).ready(function() {
+				$("#btn1").click(function() {
+					$("#test1").text("hello, buddy!");
+				});
+				$("#btn2").click(function() {
+					$("#test2").html("<b>'hello, buddy!'</b>");
+				});
+				$("#btn3").click(function() {
+					$("#test3").val('hi, there');
+				});
+			});
+		</script> -->
+		<br>
+		<h3>A callback function for text(), html() and val() methods</h3>
+		<br>
+		<p>
+			All of the three jQuery methods above: text(), html() and val() also come with 
+			a callback function. The callback function has two parameters: the index of the 
+			current element in the list of elements selected and the original (old) value.
+			You then return the string you wish to use as the new value from the function.
+			The following example demonstrates text() and html() with a callback function.
+		</p>
+		<br>
+		<h3>Example</h3>
+		<br>
+		<pre>
+			$("#btn1").click(function() {
+				$("#test1").text(function(i, oldValue) {
+					return "old value: " + oldValue + " new text: index " + i + ".";
+				});
+			});
+			$("#btn2").click(function() {
+				$("#test2").html(function(i, oldValue) {
+					return "Old value: " + oldValue + "new text: <b>index</b>" + i + ".";
+				});
+			});
+		</pre>
+		<!-- <button class="btn btn-success" id="btn1">text</button>
+		<button class="btn btn-success" id="btn2">html</button>
+		<div class="jumbotron" id="test1"></div>
+		<div class="jumbotron" id="test2"></div>
+		<script>
+			$(document).ready(function() {
+				$("#btn1").click(function() {
+					$("#test1").text(function(i, oldValue) {
+						return "Old value is: " + oldValue + ". " + "Index is: " + i + " .";
+					});
+				});
+				$("#btn2").click(function() {
+					$("#test2").html(function(i, oldValue) {
+						return "Old value is: " + oldValue + ". " + "<b>Index is:</b> " + i + " .";
+					});
+				});
+			});
+		</script> -->
+		<br>
+		<h3>Set attributes - attr()</h3>
+		<br>
+		<p>
+			The jQuery attr() method is used to set/change attribute values
+		</p>
+		<br>
+		<p>
+			The following example demonstrates how to set/change the value of href attribute in link
+		</p>
+		<br>
+		<h3>Example</h3>
+		<br>
+		<pre>
+			$('button').click(function() {
+				$('#w3s').attr("href", "http://w3school.com");
+			});
+		</pre>
+		<!-- <a id="w3s" href="none">w3school</a>
+		<button>change url</button>
+		<script>
+			$(document).ready(function() {
+				$("button").click(function() {
+					$("#w3s").attr("href", "https://www.w3schools.com/jquery");
+				});
+			});
+		</script> -->
+		<br>
+		<p>
+			The attr() method also allows you to set multiple attributes at the same time
+		</p>
+		<p>
+			The following example demonstrates how to set both the href and title attributes
+			at the same time.
+		</p>
+		<br>
+		<h3>Example</h3>
+		<br>
+		<pre>
+			$("button").click(function() {
+				$("#w3s").attr({
+					"href": "https://www.w3schools.com/jquery",
+					"title": "w3school jQuery tutorial"
+				});
+			});
+		</pre>
+		<br>
+		<!-- <a id="w3s" title="initial link" href="www.google.com.ua">Link to change</a>
+		<button id="changeLink" class="btn btn-info">change all attributes</button>
+		<script>
+			$(document).ready(function() {
+				$("button").click(function() {
+					$("#w3s").attr({
+						"title": "changed link",
+						"href": "https://www.w3schools.com/jquery"
+					});
+				});
+			});
+		</script> -->
+		<br>
+		<h3><strong>A callback function for attr()</strong></h3>
+		<br>
+		<p>
+			The jQuery mathod attr() also come with a callback function. The callback function
+			has two parameters: the index of the curent element in the list of elements selected
+			and the original (old) attribute value. You then return the string you wish to use as
+			the new attribute value from the function.
+		</p>
+		<p>
+			The following example demonstrates attr() with a callback function
+		</p>
+		<br>
+		<pre>
+			$("button").click(function() {
+				$("#w3s").attr("href", function(i, oldValue) {
+					return oldValue + "/jquery";
+				});
+			});
+		</pre>
+		<a id="w3s" href="https://www.w3schools.com">Link to main page</a>
+		<button class="btn btn-success" id="btn1">Change link to jQuery</button>
+		<script>
+			$(document).ready(function() {
+				$("#btn1").click(function(){
+					$("#w3s").attr("href", function(i, oldValue) {
+						return oldValue + "/jquery";
+					});
+				});
+			});
+		</script>
+
+
+	</div>
+</body>
+</html>

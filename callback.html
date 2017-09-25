@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+		<h3><strong> The jQuery callback functions </strong></h3>
+		<br>
+		<p>A callback function is executed when the current effect is 100% finished</p>
+		<br>
+		<h3>jQuery callback functions</h3>
+		<br>
+		<p>
+			JavaScript statements are executed line by line. However, whith effects, the next line of code can be
+			run even though the effect is not finished. This can create errors.
+			To prevent this you can create a callback function.
+			A callback function is executed after the current effect is finished.
+			Tipical syntax: <strong>$(selector).hide(speed, callback);</strong>
+		</p>
+		<br>
+		<h4>Examples</h4>
+		<br>
+		<p>
+			The example below has a callback parameter that is a function that will be executed after the hide effect
+			is completed.
+		</p>
+		<br>
+		<h4>Example with callback</h4>
+		<br>
+		<p id="hideFirst">hide first</p>
+		<p id="hideSecond">hide second</p>
+		<button class="btn btn-info" id="hide1">Hide1</button>
+		<button class="btn btn-info" id="hide2">Hide2</button>
+		<script>
+			$(document).ready(function() {
+				$("#hide1").click(function() {
+					$("#hideFirst").hide('slow', function() {
+						alert("alert after effect is completed");
+					});
+				});
+				$("#hide2").click(function() {
+					$("#hideSecond").hide('slow');
+					alert("alert before completion");
+				});
+			});
+		</script>
+	</div>
+</body>
+</html>

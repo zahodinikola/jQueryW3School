@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+		<h3><strong>jQuery - Get content and attributes</strong></h3>
+		<br>
+		<p>
+			jQuery contains powerfull methods for changing and manipulating HTML elements and attributes
+		</p>
+		<br>
+		<h3>jQuery DOM manipulation</h3>
+		<br>
+		<p>
+			One very importante part of jQuery is the possibility to manipulate the DOM
+		</p>
+		<p>
+			jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate elements
+			and attributes.
+		</p>
+		<div class="jumbotron">
+			<strong>DOM = Document Object Model</strong>
+			The DOM defines the standart of accessing HTML and XML documents:
+			"The W3C Document Object Model (DOM) is a platform and language-neutral interface, that allows programms
+			and script to dinamically access and update the content, structure and style of a document.
+		</div>
+		<br>
+		<h3><strong>Get content - text(), html() and val()</strong></h3>
+		<br>
+		<p>The three simple, but useful methods jQuery methods to manipulate DOM are:</p>
+		<ul>
+			<li>text() - sets or returns the text content of selected element</li>
+			<li>html() - sets or returns the content of selected elements (including HTML markup)</li>
+			<li>val() - sets or returns the value of form fields</li>
+		</ul>
+		<p>
+			The following example demonstrates how to get content with the jQuery text() or html() methods.
+		</p>
+		<br>
+		<h3>Example</h3>
+		<br>
+		<pre>
+			
+			$("#btn1").click(function() {
+				alert('text: ' + $("#test").text());
+			});
+			$("#btn2").click(function() {
+				alert('html: ' + $("#test").html());
+			});
+		
+		</pre>
+<!-- 		<p id="test">text is taken from &lt;p&gt; element</p>
+		<script>
+			$(document).ready(function() {
+				$("#btn1").click(function() {
+					alert('text: ' + $("#test").text());
+				});
+				$("#btn2").click(function() {
+					alert('html: ' + $("#test").html());
+				});
+			});
+		</script>
+		<button id="btn1" class="btn btn-default">click me</button>
+		<button id="btn2" class="btn btn-warning">click carefull</button> -->
+		<br>
+		<p>
+			The following example demonstrates how to get the value of an input field with the jQuery val() method
+		</p>
+<!-- 		<form name="form">
+			<input type="text" placeholder="input here" name="test" id="test"></input>
+			<input type="submit"></input>
+		</form>
+		<button id="btn3" class="btn btn-primary">get value</button>
+		<script>
+			$(document).ready(function() {
+				$("#btn3").click(function() {
+					alert('value: ' + $("#test").val());
+				});
+			});
+		</script> -->
+<!-- 		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					alert("Value: " + $("#test").val());
+				});
+			});
+		</script>
+
+
+		<p>Name: <input type="text" id="test" value="Mickey Mouse"></p>
+
+		<button>Show Value</button> -->
+		<br>
+		<h3><strong>Get attributes - attr()</strong></h3>
+		<br>
+		<p>
+			The jQuery attribute method is used to get attribute values.
+		</p>
+		<p>
+			The following example demonstrates how to get the value of href attribute in a link
+		</p>
+		<h3>Example</h3>
+		<br>
+		<pre>
+			$("button").click(function() {
+				alert($("#w3s").attr("href");
+			});
+		</pre>
+		<button class="btn btn-default" id="btn1">click me</button>
+		<a id="w3s" href="w3school.com">w3school</a>
+		<script>
+			$(document).ready(function() {
+				$("#btn1").click(function() {
+					alert($("#w3s").attr("href"));
+				});
+			});
+		</script>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+		<h3><strong>jQuery - Chaining</strong></h3>
+		<br>
+		<p>
+			With jQuery you can chain together actions/methods.
+			Chaining allows us to run multiple jQuery methods (on the same element) withing a single statement.
+		</p>
+		<br>
+		<h3>jQuery method chaining</h3>
+		<br>
+		<p>
+			Until now we have been writing jQuery statements one at a time (one after the other). However there is a
+			technique called chaining, that allows us to run multiple jQuery commands, one after the other, on the same
+			element(s).
+		</p>
+		<div class="jumbotron">
+		<strong>Tip:</strong> this way browsers don't have to find the same element(s) more than once.
+		</div>
+		<br>
+		<p>
+			To chain an action you simply append the action to the previous action.
+			The next example chains together the css(), slideUP(), slideDown() methods. The "p1" element first changes to
+			red, then it slides up, and then it slides down.
+		</p>
+		<h4>Example</h4>
+		<br>
+		<pre>
+			$(selector).method1().method2().method3();
+		</pre>
+		<br>
+		<div class="jumbotron">
+		<strong>Tip:</strong> when chaining, the line of code could become quite long. However, jQuery is not very strict
+		on the syntax. You can format it like you want, including line breaks and indentations.
+		</div>
+		<br>
+		<pre>
+			$(selector).method1()
+				.method2()
+				.method2();
+		</pre>
+		<div id="p1" style="width: 200px; height: 200px; background-color: green">text</div>
+		<button>click</button>
+		<script>
+			$(document).ready(function() {
+				//$("button").click(function() {
+					$("#p1").css("background-color", "red").slideUp('slow').slideDown('slow');
+				//});
+			});
+		</script>
+		
+		
+	</div>
+</body>
+</html>

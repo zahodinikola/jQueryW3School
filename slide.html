@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery getting started</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/bootstrap.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="/jquery.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ -->	<script src="/angular.js"></script>
+</head>
+<body>
+    <div class="container">
+		<h2>The jQuery effects - <strong>Sliding</strong></h2>
+		<p>
+			The jQuery slide methods slide elements up and down
+		</p>
+		<br>
+		<h3><strong>The jQuery sliding methods</strong></h3>
+		<p>
+			With jQuery you can create a sliding effect on elements
+		</p>
+		<p>
+			jQuery has following sliding methods
+		</p>
+		<ul>
+			<li><strong>slideDown();</strong></li>
+			<li><strong>slideUp();</strong></li>
+			<li><strong>slideToggle();</strong></li>
+		</ul>
+		<h3><strong>jQuery slideDown() method</strong></h3>
+		<br>
+		<p>
+			The jQuery slideDown() method is used to slide down an element
+		</p>
+		<br>
+		<h4>Syntax</h4>
+		<pre>
+			$(selector).slideDown(speed, callback);
+		</pre>
+		<br>
+		<p>
+			The optional speed parameter specifies the duration of the effect. It can take following values:
+			'fast', 'slow' or milliseconds.
+			The optiioal callback parameter is a function to be executed after the sliding completes.
+		</p>
+		<h3>Example</h3>
+		<pre>
+			$("#flip").click(function() {
+				$("#panel").slideDown();
+			});
+		</pre>
+<!-- 		<style>
+			#flip, #panel {
+				padding: 15px;
+				text-align: center;
+				background-color: #e5eecc;
+				border: solid, 1px, #c3c3c3;
+			}
+			#panel {
+				padding: 50px;
+				display: none;
+			}
+		</style>
+		<button id="flip">slideDown</button>
+		<div id="panel">awesome!</div>
+		<script>
+			$(document).ready(function() {
+				$("#flip").click(function() {
+					$("#panel").slideDown();
+				});
+			});
+		</script> -->
+		<h3><strong>jQuery slideUp() method</strong></h3>
+		<br>
+		<p>
+			The jQuery slideUp() method is used to slide up an element
+		</p>
+		<h4>Syntax</h4>
+		<br>
+		<pre>
+			$(selector).slideUp(speed, callback);
+		</pre>
+		<br>
+		<p>
+			The optional speed parameter specifies the duration of the effect. It can take following values:
+			'fast', 'slow', milliseconds.
+			The optional parameter callback is a function to be executed after the sliding completes.
+		</p>
+		<br>
+		<h4>Example</h4>
+		<pre>
+			$("#flop").click(function() {
+				$("#panel").slideUp(1000);
+			});
+		</pre>
+<!-- 		<button id="flip">slide down</button>
+		<button id="flop">slide up</button>
+		<div id="panel">here i am</div>
+		<style>
+			#panel {
+				padding: 50px;
+				background-color: light-blue;
+				border: solid 1px #3e3e3e;
+				text-align: center;
+				display: none
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				$("#flip").click(function() {
+					$("#panel").slideDown('slow');
+				});
+				$("#flop").click(function() {
+					$("#panel").slideUp('slow');
+				});
+			});
+			for (var i = 0; i < 10; i++){
+				var element = document.createElement('br');
+				document.body.appendChild(element);
+			}
+		</script>
+		<br> -->
+		<h3><strong>jQuery slideToggle() method</strong></h3>
+		<br>
+		<p>
+			The jQuery slideToggle() method toggles between slideDown() and slideUp() methods.
+			If the elements have been slide down, slideToggle() will slide them up.
+			If the elements have been slide up, slideToggle() will slide them down.
+		</p>
+		<h4>Syntax</h4>
+		<pre>
+			$(selector).slideToggle(speed, callback);
+		</pre>
+		<br>
+		<p>
+			The optional speed parameter can take the following values: 'fast', 'slow', milliseconds.
+			The optional callback parameter is a function to be executed after the sliding completes.
+		</p>
+		<br>
+		<h4>Example</h4>
+		<pre>
+			$("#flip").click(function() {
+				$("#panel").slideToggle(2000);
+			});
+		</pre>
+		<style>
+			#panel {
+				background-color: cyan;
+				display: none;
+				border: solid 1px #3f3f3f;
+				text-align: center;
+				padding: 50px;
+			}
+		</style>
+		<button id="flip">Flip</button>
+		<div id="panel"> toggle </div>
+		<script>
+			for( var i = 0; i < 10; i++){
+				var element = document.createElement('br');
+				document.body.appendChild(element);
+			}
+			$(document).ready(function() {
+				$("#flip").click(function() {
+					$("#panel").slideToggle('slow');
+				});
+			});
+		</script>
+    </div>
+</body>
+</html>
